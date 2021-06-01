@@ -72,7 +72,7 @@ app.post("/api/deleteTimeSheet", (req, res) => {
    //console.log("Got a GET request for deleting Timesheet");
       res.send( {"resp":"DELETE_TIMER","statusCode":"200","actuatorId":req.body.actuatorId,"description":"Timer deleted successfully"});
 }
-)
+);
 
 /********************* set timesheet ********************/
 
@@ -81,7 +81,7 @@ app.post("/api/setTimeSheet", (req, res) => {
    //console.log("Got a GET request for setting Timesheet");
       res.send( {"resp":"SET_TIMER","statusCode":"200","actuatorId":req.body.actuatorId,"description":"Timer set successfully"});
 }
-)
+);
 
 /********************* delete all timers of a day ********************/
 
@@ -90,7 +90,7 @@ app.post("/api/deleteAllTimers", (req, res) => {
    //console.log("Got a GET request for deleting a day's Timers");
       res.send( {"resp":"DELETE_ALL_TIMER","statusCode":"200","actuatorId":req.body.actuatorId,"description":"All deleted successfully"});
 }
-)
+);
 
 /********************* Set Port ********************/
 
