@@ -10,7 +10,7 @@
 
 /********Node modules required**********/
 
-var express = require('express');
+var express = require("express");
 var app = express();
 var responseObj = require("./jsonResp.json");
 
@@ -23,7 +23,7 @@ app.use(express.json());
 app.post("/api/deviceList", (req, res) => {
 
    //console.log("Got a GET request for getDeviceList");
-   const individualDeviceList = responseObj.userIdentifier.find(c => c.userId ===(req.body.userId));
+   const individualDeviceList = responseObj.userIdentifier.find((c) => c.userId === (req.body.userId));
    if(!individualDeviceList) {res.status(404).send({"resp":"GET_DEVICE_LIST","statusCode":"404"});}
    res.send(individualDeviceList);
 
@@ -35,16 +35,16 @@ app.post("/api/actuatorList", (req, res) => {
 
    //console.log("Got a GET request for getActuatorList");
    const individualActuatorList = responseObj.deviceIdentifier.find((c) => c.deviceId ===(req.body.deviceId));
-   if(!individualActuatorList) res.status(404).send({"resp":"GET_ACTUATOR_LIST","statusCode":"404"});
+   if(!individualActuatorList) {res.status(404).send({"resp":"GET_ACTUATOR_LIST","statusCode":"404"});}
    res.send(individualActuatorList);
 
 });
 
 /********Send timesheet for user**********/
 
-app.post('/api/reqTimesheet', (req, res) => {
+app.post("/api/reqTimesheet", (req, res) => {
 
-   console.log("Got a GET request for Timesheet");
+   //console.log("Got a GET request for Timesheet");
 
    /*********Check for actuator Id and retreive data**********/
 
@@ -63,7 +63,7 @@ app.post('/api/reqTimesheet', (req, res) => {
    }
 
 }
-)
+);
 
 /********************* delete timesheet ********************/
 
